@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primaryColor">#0b0b0b</color>
+    <color name="primaryLightColor">#333333</color>
+    <color name="primaryDarkColor">#000000</color>
+    <color name="secondaryColor">#FF6200EE</color>
+    <color name="secondaryLightColor">#FFBB86FC</color>
+    <color name="secondaryDarkColor">#FF3700B3</color>
+    <color name="TertiaryColor">#3B3B3B</color>
+    <color name="TertiaryDarkColor">#3C3C3C</color>
+    <color name="TertiaryLightColor">#929292</color>
+    <!-- Text Color -->
+    <color name="textColor">#f1f1f1</color>
+    <!-- Color Buttons -->
+    <color name="buttonStateNormalColor">#f1f1f1</color>
+    <color name="buttonPressedColor">#DCCDCD</color>
+    <color name="buttonStateNormalMovieFavoriteColor">#25E043</color>
+    <color name="buttonPressedMovieFavoriteColor">#3BBD50</color>
+</resources>

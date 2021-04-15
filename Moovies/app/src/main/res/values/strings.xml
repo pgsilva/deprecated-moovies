@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Moovies</string>
+    <!-- Search -->
+    <string name="title_search">Pesquisa</string>
+    <string name="hint_search_text_input_layout">Pesquise por filmes ou séries</string>
+    <string name="title_search_results">Resultados</string>
+    <string name="title_search_noting_found">Nada encontrado...</string>
+
+</resources>
