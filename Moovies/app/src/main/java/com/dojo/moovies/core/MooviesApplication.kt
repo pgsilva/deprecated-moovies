@@ -2,6 +2,7 @@ package com.dojo.moovies.core
 
 import android.app.Application
 import com.dojo.moovies.di.apiModules
+import com.dojo.moovies.di.detailsModule
 import com.dojo.moovies.di.searchModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -18,7 +19,8 @@ class MooviesApplication : Application() {
             modules(
                 //add Modules for Koin
                 apiModules,
-                searchModule
+                searchModule,
+                detailsModule,
             )
         }
     }

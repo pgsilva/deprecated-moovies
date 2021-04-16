@@ -1,9 +1,23 @@
 <resources>
     <string name="app_name">Moovies</string>
+    <string name="label_home_fragment">Home</string>
+    <string name="label_my_list_fragment">My List</string>
+    <string name="label_details_fragment">Detalhes</string>
+
     <!-- Search -->
     <string name="title_search">Pesquisa</string>
     <string name="hint_search_text_input_layout">Pesquise por filmes ou séries</string>
     <string name="title_search_results">Resultados</string>
     <string name="title_search_noting_found">Nada encontrado...</string>
+
+
+    <!-- Details -->
+    <string name="btn_label_add_favorite_details">Add favorite</string>
+    <string name="btn_label_is_favorite_details">Movie is favorite</string>
+    <string name="label_date_movies_details">Release: %s</string>
+    <string name="label_details_my_list">My list</string>
+    <string name="label_details_share_movie">Share</string>
+    <string name="title_similar_movies_details">Assista agora</string>
+
 
 </resources>

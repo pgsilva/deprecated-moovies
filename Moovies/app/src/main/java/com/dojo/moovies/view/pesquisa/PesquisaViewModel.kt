@@ -2,7 +2,9 @@ package com.dojo.moovies.view.pesquisa
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
+import com.dojo.moovies.data.domain.canais.ServicoStream
 import com.dojo.moovies.data.domain.pesquisa.Item
 import com.dojo.moovies.data.domain.pesquisa.Pesquisa
 import com.dojo.moovies.data.domain.pesquisa.Resultado
@@ -20,5 +22,12 @@ class PesquisaViewModel(
             listSearch.value = justWatchApiRepositoryImpl.getPesquisaDeShows(pesquisa)
         }
     }
+
+    val provider = liveData<List<ServicoStream>> {
+        justWatchApiRepositoryImpl.getServicoStream()?.let {
+            emit(it)
+        }
+    }
+
 
 }

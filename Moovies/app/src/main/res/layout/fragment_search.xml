@@ -12,6 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <SearchView
+            android:id="@+id/text_input_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:clipToPadding="false"
+            android:textColorHint="@color/TertiaryLightColor"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/hint_search_text_input_layout"
+            app:defaultQueryHint="@string/hint_search_text_input_layout"
+            android:queryHint="@string/hint_search_text_input_layout"
+            app:startIconDrawable="@drawable/ic_search_16px"
+            />
+        <!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_search"
             android:layout_width="match_parent"
@@ -39,6 +59,7 @@
                 android:padding="8dp"
                 android:textSize="13sp" />
         </com.google.android.material.textfield.TextInputLayout>
+        -->
 
         <TextView
             android:id="@+id/tv_search_noting_found"

@@ -8,5 +8,5 @@ data class Resultado(
     val page_size: Int?,
     val total_pages: Int?,
     val total_results: Int?,
-    val items: ArrayList<Item?>?
+    val items: ArrayList<Item>?
 ): Serializable

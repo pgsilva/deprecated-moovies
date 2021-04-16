@@ -3,7 +3,7 @@ package com.dojo.moovies.view.pesquisa.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.alvarengadev.alvaflix.view.interfaces.MovieOnClickListener
+import com.dojo.moovies.view.interfaces.MovieOnClickListener
 import com.alvarengadev.alvaflix.view.search.adapter.SearchViewHolder
 import com.dojo.moovies.R
 import com.dojo.moovies.data.domain.pesquisa.Item

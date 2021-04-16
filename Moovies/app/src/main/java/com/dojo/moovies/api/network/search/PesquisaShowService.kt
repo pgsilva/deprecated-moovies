@@ -1,7 +1,7 @@
 package com.dojo.moovies.api.network.search
 
-import com.dojo.moovies.api.network.search.response.MovieSearchResult
 import com.dojo.moovies.data.domain.pesquisa.Pesquisa
+import com.dojo.moovies.data.domain.pesquisa.Resultado
 import com.dojo.moovies.util.JustWatchApiData.Companion.API_LOCALE
 import retrofit2.Call
 import retrofit2.http.Body
@@ -14,5 +14,5 @@ interface PesquisaShowService {
     fun search(
         @Query("language") languageApi: String,
         @Body pesquisa: Pesquisa
-    ): Call<MovieSearchResult>
+    ): Call<Resultado>
 }

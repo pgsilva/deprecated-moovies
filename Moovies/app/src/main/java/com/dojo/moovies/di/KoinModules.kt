@@ -3,6 +3,7 @@ package com.dojo.moovies.di
 import com.dojo.moovies.api.network.JustWatchApi
 import com.dojo.moovies.data.repository.JustWatchApiRepositoryImpl
 import com.dojo.moovies.util.JustWatchApiData.Companion.API_URI
+import com.dojo.moovies.view.details.DetalhesViewModel
 import com.dojo.moovies.view.pesquisa.PesquisaViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -22,6 +23,16 @@ val apiModules = module {
 val searchModule = module {
     viewModel {
         PesquisaViewModel(
+            JustWatchApiRepositoryImpl(
+                justWatchApi = get()
+            )
+        )
+    }
+}
+
+val detailsModule = module {
+    viewModel {
+        DetalhesViewModel(
             JustWatchApiRepositoryImpl(
                 justWatchApi = get()
             )

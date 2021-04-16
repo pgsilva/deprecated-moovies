@@ -15,7 +15,7 @@ data class Pesquisa(
     val max_price: String? = null,
     val scoring_filter_types: String? = null,
     val cinema_release: String? = null,
-    val query: String?,
+    var query: String?,
     val page: Int? = null,
     val page_size: Int? = null
 

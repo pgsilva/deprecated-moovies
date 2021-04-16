@@ -2,23 +2,25 @@ package com.dojo.moovies.view.pesquisa
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.widget.addTextChangedListener
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alvarengadev.alvaflix.view.interfaces.MovieOnClickListener
-
-import com.dojo.moovies.view.pesquisa.adapter.SearchAdapter
 import com.dojo.moovies.R
+import com.dojo.moovies.data.dao.ServicoStreamDao.Companion.atualizaListaDeServicosStream
 import com.dojo.moovies.data.domain.pesquisa.Item
 import com.dojo.moovies.data.domain.pesquisa.Pesquisa
 import com.dojo.moovies.databinding.FragmentSearchBinding
 import com.dojo.moovies.util.JustWatchApiData.Companion.API_PAGE_SIZE
 import com.dojo.moovies.util.toLowerCase
+import com.dojo.moovies.view.interfaces.MovieOnClickListener
+import com.dojo.moovies.view.pesquisa.adapter.SearchAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class PesquisaFragment : Fragment(R.layout.fragment_search) {
 
     private val viewModel: PesquisaViewModel by viewModel()
+
 
     override fun onViewCreated(
         view: View,
@@ -28,6 +30,13 @@ class PesquisaFragment : Fragment(R.layout.fragment_search) {
         val searchBinding = FragmentSearchBinding.bind(view)
 
         initComponents(searchBinding)
+        recuperaServicosStreams()
+    }
+
+    private fun recuperaServicosStreams() {
+        viewModel.provider.observe(viewLifecycleOwner,{
+            atualizaListaDeServicosStream(it)
+        })
     }
 
     override fun onResume() {
@@ -44,16 +53,30 @@ class PesquisaFragment : Fragment(R.layout.fragment_search) {
     }
 
     private fun initComponents(searchBinding: FragmentSearchBinding) {
-        searchBinding.textInputSearch.editText?.addTextChangedListener { editable ->
+        searchBinding.textInputSearch.queryHint = "Pesquise por filmes ou séries"
+        searchBinding.textInputSearch.setOnQueryTextListener(object :
+            SearchView.OnQueryTextListener {
             val pesquisa: Pesquisa =
                 Pesquisa(
-                    query = toLowerCase(editable.toString()),
+                    query = null,
                     page = 1,
                     page_size = API_PAGE_SIZE,
                     content_types = listOf("show", "movie")
                 )
-            viewModel.search(pesquisa)
-        }
+
+            override fun onQueryTextSubmit(query: String): Boolean {
+                pesquisa.query = toLowerCase(query)
+                viewModel.search(pesquisa)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                pesquisa.query = toLowerCase(newText)
+                viewModel.search(pesquisa)
+                return false
+            }
+        })
+
         viewModel.listSearch.observe(viewLifecycleOwner, { listSearch ->
             if (listSearch != null) {
                 val searchAdapter = SearchAdapter(listSearch)
@@ -66,13 +89,11 @@ class PesquisaFragment : Fragment(R.layout.fragment_search) {
 
                 searchAdapter.setOnClickListener(object : MovieOnClickListener {
                     override fun onItemClick(show: Item) {
-                        /*
+
                         val directions =
-                            SearchFragmentDirections.actionSearchFragmentToDetailsFragment(show)
+                            PesquisaFragmentDirections.actionSearchFragmentToDetailsFragment(show = show)
                         findNavController().navigate(directions)
-
-                         */
-
+                        
                     }
                 })
             } else {
