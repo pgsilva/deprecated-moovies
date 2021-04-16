@@ -21,6 +21,7 @@ import com.dojo.moovies.view.interfaces.OffersOnClickListener
 import com.squareup.picasso.Picasso
 import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class DetalhesFragment : Fragment(R.layout.fragment_details) {
@@ -75,13 +76,16 @@ class DetalhesFragment : Fragment(R.layout.fragment_details) {
 
 
             //preparar servicos de stream
-            val listProviders: ArrayList<Offers> = ArrayList(detalhe?.offers)
+            var listProviders: ArrayList<Offers> = ArrayList()
+            if (detalhe?.offers != null) {
+                listProviders = ArrayList(detalhe.offers)
+            }
             val providerAdapter = ProviderAdapter(listProviders)
 
             providerAdapter.setOnClickListener(object : OffersOnClickListener {
                 override fun onItemClick(provider: Offers) {
                     //logica para redirecionamento
-                    
+
                     val viewIntent = Intent(
                         "android.intent.action.VIEW",
                         Uri.parse(provider.urls.standard_web)
