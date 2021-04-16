@@ -22,6 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--
         <TextView
             android:id="@+id/tv_details_title_movie"
             style="@style/TitleStyle"
@@ -40,6 +41,7 @@
             app:layout_constraintStart_toEndOf="@+id/ib_details_back"
             app:layout_constraintTop_toTopOf="@+id/ib_details_back"
             tools:text="Star wars the last jedi" />
+            -->
 
         <ImageView
             android:id="@+id/iv_details_icon_rating"
@@ -93,14 +95,13 @@
                 app:layout_constraintTop_toTopOf="@+id/iv_details_poster_movie" />
 
             <TextView
-                android:id="@+id/tv_details_year_movie"
+                android:id="@+id/tv_details_title_movie"
                 style="@style/TitleStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginBottom="24dp"
-                android:text="20-10-20"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_details_poster_movie"
                 app:layout_constraintStart_toStartOf="parent" />
 

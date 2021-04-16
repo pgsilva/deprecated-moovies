@@ -66,7 +66,7 @@ class DetalhesFragment : Fragment(R.layout.fragment_details) {
 
             detailsBinding.tvDetailsTitleMovie.text = detalhe?.title
             detailsBinding.tvDetailsValueRatingMovie.text = scoringVotes?.first()?.value.toString()
-            detailsBinding.tvDetailsYearMovie.text = detalhe?.original_release_year.toString()
+            //detailsBinding.tvDetailsYearMovie.text = detalhe?.original_release_year.toString()
             detailsBinding.tvDetailsDescriptionMovie.text = detalhe?.short_description
 
             //preparar poster
@@ -78,7 +78,7 @@ class DetalhesFragment : Fragment(R.layout.fragment_details) {
             //preparar servicos de stream
             var listProviders: ArrayList<Offers> = ArrayList()
             if (detalhe?.offers != null) {
-                listProviders = ArrayList(detalhe.offers)
+                listProviders = ArrayList(detalhe.offers.distinctBy { it.provider_id })
             }
             val providerAdapter = ProviderAdapter(listProviders)
 

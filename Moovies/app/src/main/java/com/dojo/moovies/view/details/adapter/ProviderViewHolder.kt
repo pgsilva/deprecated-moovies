@@ -29,10 +29,10 @@ class ProviderViewHolder(
     }
 
     fun bind(offer: Offers) {
-        val tvType = itemView.findViewById(R.id.tv_type) as TextView
+        //val tvType = itemView.findViewById(R.id.tv_type) as TextView
         val ivPoster = itemView.findViewById(R.id.iv_provider_logo) as ImageView
 
-        tvType.text = offer.presentation_type
+        //tvType.text = offer.presentation_type
         Picasso.get()
             .load(recuperarUrlProvider(offer.provider_id))
             .into(ivPoster)
