@@ -54,6 +54,7 @@ class PesquisaFragment : Fragment(R.layout.fragment_search) {
 
     private fun initComponents(searchBinding: FragmentSearchBinding) {
         searchBinding.textInputSearch.queryHint = "Pesquise por filmes ou séries"
+
         searchBinding.textInputSearch.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
             val pesquisa: Pesquisa =
@@ -93,7 +94,7 @@ class PesquisaFragment : Fragment(R.layout.fragment_search) {
                         val directions =
                             PesquisaFragmentDirections.actionSearchFragmentToDetailsFragment(show = show)
                         findNavController().navigate(directions)
-                        
+
                     }
                 })
             } else {
@@ -104,13 +105,13 @@ class PesquisaFragment : Fragment(R.layout.fragment_search) {
 
     private fun showSearch(searchBinding: FragmentSearchBinding) {
         searchBinding.rcySearchResults.visibility = View.VISIBLE
-        searchBinding.tvSearchTitleResults.visibility = View.VISIBLE
+        //searchBinding.lktvSearchTitleResults.visibility = View.VISIBLE
         searchBinding.tvSearchNotingFound.visibility = View.GONE
     }
 
     private fun hideSearch(searchBinding: FragmentSearchBinding) {
         searchBinding.rcySearchResults.visibility = View.GONE
-        searchBinding.tvSearchTitleResults.visibility = View.GONE
+        //searchBinding.tvSearchTitleResults.visibility = View.GONE
         searchBinding.tvSearchNotingFound.visibility = View.VISIBLE
 
     }

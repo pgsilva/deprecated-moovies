@@ -15,5 +15,5 @@
         android:height="200dp"
         android:drawable="@drawable/moovies"
         android:gravity="center" />
-
+    
 </layer-list>

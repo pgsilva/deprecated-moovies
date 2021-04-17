@@ -20,4 +20,11 @@
     <string name="title_similar_movies_details">Assista agora</string>
 
 
+    <!--Home-->
+
+    <string name="title_home">Home</string>
+    <string name="title_welcome_home">Bem-vindo ao Moovies</string>
+    <string name="title_welcome_descript">Pesquise por filmes e séries e saiba onde assisti-los.</string>
+
+
 </resources>
