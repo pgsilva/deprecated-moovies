@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/LayoutStyle"
@@ -11,7 +12,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="123dp">
 
 
         <ImageView
@@ -20,12 +23,11 @@
             android:layout_height="0dp"
             android:layout_marginBottom="54dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/img_background"
             app:layout_constraintBottom_toTopOf="@+id/tv_home_descript"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/img_background"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <View
@@ -83,7 +85,7 @@
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintLeft_toLeftOf="parent"
 
             app:layout_constraintRight_toRightOf="parent"
@@ -94,4 +96,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
